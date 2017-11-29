@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+
+archivesBaseName = rootProject.name + "-service"
+
+applicationName = "knownhub-edge"
+
+mainClassName = "com.knownhub.service.KnownHubService"
+
+startScripts.classpath = files('src/dist/lib/knownhub') + startScripts.classpath
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':service:service-api')
+
+    testCompile group: 'junit', name: 'junit', version: "${versions.junit}"
+}

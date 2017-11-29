@@ -1,0 +1,37 @@
+apply plugin: 'distribution'
+
+allprojects {
+    group 'com.alihealth'
+    version '0.0.1.' + properties.get("qualifier", "SNAPSHOT")
+}
+
+ext {
+    versions = [:]
+}
+
+versions["junit"]                           = "4.12"
+
+repositories {
+}
+
+dependencies {
+}
+
+distributions {
+    main {
+        contents {
+            into('/') {
+                from { 'LICENSE' }
+            }
+            into("api") {
+                from { project(':api').installDist }
+            }
+            into("edge") {
+                from { project(':edge:edge-impl').installDist }
+            }
+            into("service") {
+                from { project(':service:service-impl').installDist }
+            }
+        }
+    }
+}
