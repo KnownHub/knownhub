@@ -2,17 +2,15 @@ version: '3'
 services:
   gateway:
     container_name: gateway
-    image: docker.io/nginx
+    build:
+      context: .
+      dockerfile: Dockerfile-gateway
     ports:
       - 80:80
-    volumes:
-      - ./gateway/service.conf:/etc/nginx/conf.d/service.conf
   service:
     container_name: service
-    image: docker.io/gradle
-    working_dir: /opt/knownhub
-    command: gradle run -Pqualifier=RELEASE
+    build:
+      context: .
+      dockerfile: Dockerfile-service
     ports:
       - 8080:8080
-    volumes:
-      - .:/opt/knownhub

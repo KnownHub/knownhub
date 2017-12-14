@@ -1,0 +1,2 @@
+FROM docker.io/nginx
+ADD ./gateway/service.conf /etc/nginx/conf.d/service.conf

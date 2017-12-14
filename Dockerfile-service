@@ -1,0 +1,7 @@
+FROM docker.io/gradle
+ADD . /opt/knownhub
+USER root
+RUN chown -R gradle:gradle /opt/knownhub
+USER gradle
+WORKDIR /opt/knownhub
+CMD gradle run -Pqualifier=RELEASE
