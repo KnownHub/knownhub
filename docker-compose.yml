@@ -9,10 +9,10 @@ services:
       - gateway/service.conf:/etc/nginx/conf.d/service.conf
   service:
     container_name: service
-        image: docker.io/gradle
-        working_dir: /opt/knownhub
-        command: gradle run -Pqualifier=RELEASE
-        ports:
-          - 8080:8080
-        volumes:
-          - .:/opt/knownhub
+    image: docker.io/gradle
+    working_dir: /opt/knownhub
+    command: gradle run -Pqualifier=RELEASE
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/opt/knownhub
