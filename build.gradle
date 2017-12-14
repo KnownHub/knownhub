@@ -9,7 +9,9 @@ ext {
     versions = [:]
 }
 
-versions["junit"]                           = "4.12"
+versions["spring-boot-starter-web"]         = "1.5.9.RELEASE"
+
+versions["spring-boot-starter-test"]        = "1.5.9.RELEASE"
 
 repositories {
 }
@@ -23,14 +25,14 @@ distributions {
             into('/') {
                 from { 'LICENSE' }
             }
-            into("api") {
-                from { project(':api').installDist }
+            into("/service") {
+                from { project(':service').installDist }
             }
-            into("edge") {
-                from { project(':edge:edge-impl').installDist }
+            into("/gateway") {
+                from { 'gateway' }
             }
-            into("service") {
-                from { project(':service:service-impl').installDist }
+            into("/database") {
+                from { 'database' }
             }
         }
     }

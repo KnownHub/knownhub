@@ -5,7 +5,7 @@ sourceCompatibility = 1.8
 
 archivesBaseName = rootProject.name + "-service"
 
-applicationName = "knownhub-edge"
+applicationName = "knownhub-service"
 
 mainClassName = "com.knownhub.service.KnownHubService"
 
@@ -17,7 +17,7 @@ repositories {
 }
 
 dependencies {
-    compile project(':service:service-api')
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "${versions.'spring-boot-starter-web'}"
 
-    testCompile group: 'junit', name: 'junit', version: "${versions.junit}"
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: "${versions.'spring-boot-starter-test'}"
 }

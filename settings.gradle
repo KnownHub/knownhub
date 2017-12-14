@@ -1,7 +1,3 @@
 rootProject.name = 'knownhub'
 
-include 'api'
-include 'edge:edge-api'
-include 'edge:edge-impl'
-include 'service:service-api'
-include 'service:service-impl'
+include 'service'
