@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class KnownHubService {
-    public static final String REQUEST_PREFIX = "service/";
+    public static final String SERVICE_PREFIX = "service/";
 
     public static void main(String[] args) {
         SpringApplication.run(KnownHubService.class, args);
     }
 
-    @RequestMapping(REQUEST_PREFIX + "index")
+    @RequestMapping(SERVICE_PREFIX + "index")
     public String index() {
         return "KnownHub";
     }
