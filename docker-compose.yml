@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   gateway:
     container_name: gateway
@@ -6,7 +6,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - gateway/service.conf:/etc/nginx/conf.d/service.conf
+      - ./gateway/service.conf:/etc/nginx/conf.d/service.conf
   service:
     container_name: service
     image: docker.io/gradle
